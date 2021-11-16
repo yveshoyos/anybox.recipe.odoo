@@ -539,7 +539,7 @@ class BaseRecipe(object):
                 project_name = req.name.lower()
                 marker = inst_req.markers
             else:
-                requirement_name = inst_req.requirement if hasattr(inst_req, 'requirement') else inst_req.req
+                requirement_name = inst_req.requirement if hasattr(inst_req, 'requirement') else str(inst_req.req)
                 req = pkg_resources.Requirement.parse(requirement_name)
                 project_name = req.project_name.lower()
                 marker = req.marker
